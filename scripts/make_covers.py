@@ -4,7 +4,7 @@ Tall viewport, heading-based clipping: each cover is defined by the section it
 starts at and the element it ends at, so the crop follows the content rather than
 a hardcoded pixel box that breaks whenever the copy changes.
 
-Serves `webapp/` over a local HTTP server rather than opening the file directly,
+Serves `docs/` over a local HTTP server rather than opening the file directly,
 because `file://` pages are treated as opaque origins by some browser features and
 because that is how the page is actually deployed.
 
@@ -27,8 +27,8 @@ import threading
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-WEB = ROOT / "webapp"
-OUT = ROOT / "docs" / "covers"
+SITE = ROOT / "docs"
+OUT = SITE / "covers"
 
 # (name, selector to scroll to, selector whose bottom ends the crop, pad px)
 SHOTS = [
@@ -174,13 +174,13 @@ def main() -> None:
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
 
-    if not (WEB / "index.html").exists():
+    if not (SITE / "index.html").exists():
         raise SystemExit("webapp/index.html missing; run scripts/build_webapp.py")
 
     port = free_port()
-    httpd = serve(WEB, port)
+    httpd = serve(SITE, port)
     url = f"http://127.0.0.1:{port}/index.html"
-    print(f"serving {WEB} at {url}")
+    print(f"serving {SITE} at {url}")
 
     try:
         themes = ["dark", "light"] if args.theme == "both" else [args.theme]

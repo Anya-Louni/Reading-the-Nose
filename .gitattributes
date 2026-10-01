@@ -1,0 +1,16 @@
+# docs/index.html is build output, not hand-written source. It is produced by
+# scripts/build_webapp.py from webapp/template.html with the data bundles inlined,
+# so roughly 90% of its bytes are embedded JSON. Marking it generated keeps it out
+# of the language statistics and collapses it in diffs. The hand-written source is
+# webapp/template.html, which is counted normally.
+docs/index.html linguist-generated=true
+
+# Exported data bundles consumed by the page.
+webapp/data/*.json linguist-generated=true
+
+# Result tables written by the run scripts.
+artifacts/*.csv linguist-generated=true
+artifacts/*.json linguist-generated=true
+
+# Documentation should not count toward the language breakdown.
+*.md linguist-documentation=true

@@ -1,19 +1,22 @@
 # Smell Galaxy
 
-Static, self-contained page. `index.html` is the build output and needs no server,
-no build step at view time, and no network beyond the Google Fonts stylesheet.
+Source for the report. `template.html` is the hand-written page; `data/` holds the
+exported bundles. The build inlines both into a single self-contained
+`docs/index.html`, which needs no server, no build step at view time, and no
+network beyond the Google Fonts stylesheet.
 
-## Deploy to GitHub Pages
+## Deploy
 
-Point Pages at this directory, or copy `index.html` to the site root. Nothing else
-is required; the data is inlined.
+GitHub Pages serves `docs/` from the `main` branch. Rebuild and commit
+`docs/index.html` to publish a change.
 
 ## Rebuild after changing the model or the analysis
 
     python scripts/export_galaxy_data.py   # embeddings, 3D layout, confusions, attributions
     python scripts/build_webapp.py         # inline data/galaxy.json into template.html
 
-Edit `template.html`, never `index.html` (it is generated and will be overwritten).
+Edit `template.html`, never `docs/index.html` (generated, overwritten on every build,
+and marked `linguist-generated` so it stays out of the repository language stats).
 
 ## Framing, which is deliberate
 

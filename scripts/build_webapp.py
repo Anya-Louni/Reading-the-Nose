@@ -1,9 +1,9 @@
 """Inline the data bundle into the template to produce one self-contained page.
 
-The result works two ways with no change: dropped on GitHub Pages as
-`webapp/index.html`, and published as an Artifact. Both need the data embedded
-rather than fetched, because an Artifact cannot fetch a sibling file and a
-`file://` page cannot fetch anything at all.
+Source lives in `webapp/` (template plus data bundles); the single self-contained
+page is written to `docs/index.html`, which is what GitHub Pages serves. The data
+is embedded rather than fetched so the page works from any origin, including a
+`file://` open with no server at all.
 """
 
 from __future__ import annotations
@@ -40,7 +40,8 @@ def main() -> None:
         op = json.dumps(odor, separators=(",", ":")).replace("</", "<\\/")
         out = ODOR_MARKER.sub(lambda _: op, out, count=1)
 
-    dest = WEB / "index.html"
+    dest = ROOT / "docs" / "index.html"
+    dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(out, encoding="utf-8")
     kb = dest.stat().st_size / 1024
     print(f"wrote {dest} ({kb:.0f} KB)")
