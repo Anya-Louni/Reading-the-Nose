@@ -1,0 +1,20 @@
+{
+  "n_molecules": 250,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "attention_spread_median": 0.06656720096198614,
+  "attention_spread_max": 0.1630422689648861,
+  "ig_spread_median": 0.19704809039831161,
+  "frac_attention_uniform": 0.0,
+  "sanity_mean": {
+    "attention": 0.7933678819281659,
+    "integrated_gradients": 0.03321862212447227
+  },
+  "faithful_frac": {
+    "attention": 0.5493333333333333,
+    "integrated_gradients": 0.98
+  }
+}

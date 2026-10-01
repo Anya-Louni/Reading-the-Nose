@@ -1,0 +1,15 @@
+torch>=2.0
+torch-geometric>=2.5
+rdkit>=2023.9
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+scipy>=1.11
+pyarrow>=14.0
+
+# Cover image capture only (scripts/make_covers.py)
+playwright>=1.40
+pillow>=10.0
+
+# Tests
+pytest>=7.4

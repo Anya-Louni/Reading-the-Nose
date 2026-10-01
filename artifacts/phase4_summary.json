@@ -1,0 +1,22 @@
+{
+  "n_molecules_explained": 8,
+  "scope": [
+    "ethanol",
+    "acetaldehyde",
+    "acetone",
+    "butan-1-ol",
+    "benzene",
+    "diacetyl",
+    "toluene",
+    "2-phenylethanol"
+  ],
+  "sanity_spearman_by_method": {
+    "attention": 0.4881143188845117,
+    "integrated_gradients": 0.31095993953136813
+  },
+  "agreement_attention_vs_ig": 0.5416995032932213,
+  "faithful_fraction": {
+    "attention": 0.5833333333333334,
+    "integrated_gradients": 0.8333333333333334
+  }
+}

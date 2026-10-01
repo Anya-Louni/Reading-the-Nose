@@ -1,0 +1,49 @@
+seed,molecule,method,spearman,n_atoms,verdict
+0,ethanol,attention,0.5,3,passes
+0,ethanol,integrated_gradients,-1.0,3,passes
+0,acetaldehyde,attention,0.5,3,passes
+0,acetaldehyde,integrated_gradients,0.5,3,passes
+0,acetone,attention,1.0,4,FAILS (map survives weight randomisation)
+0,acetone,integrated_gradients,0.3333333333333334,4,passes
+0,butan-1-ol,attention,0.49999999999999994,5,passes
+0,butan-1-ol,integrated_gradients,-0.6,5,passes
+0,benzene,attention,,6,undefined (attribution is constant; molecule is symmetric)
+0,benzene,integrated_gradients,,6,undefined (attribution is constant; molecule is symmetric)
+0,diacetyl,attention,0.4285714285714286,6,passes
+0,diacetyl,integrated_gradients,0.942857142857143,6,FAILS (map survives weight randomisation)
+0,toluene,attention,-0.07142857142857144,7,passes
+0,toluene,integrated_gradients,0.7142857142857144,7,passes
+0,2-phenylethanol,attention,0.43333333333333335,9,passes
+0,2-phenylethanol,integrated_gradients,0.3,9,passes
+1,ethanol,attention,1.0,3,FAILS (map survives weight randomisation)
+1,ethanol,integrated_gradients,-1.0,3,passes
+1,acetaldehyde,attention,0.5,3,passes
+1,acetaldehyde,integrated_gradients,0.5,3,passes
+1,acetone,attention,0.3333333333333334,4,passes
+1,acetone,integrated_gradients,0.7777777777777779,4,passes
+1,butan-1-ol,attention,0.7,5,passes
+1,butan-1-ol,integrated_gradients,-0.49999999999999994,5,passes
+1,benzene,attention,,6,undefined (attribution is constant; molecule is symmetric)
+1,benzene,integrated_gradients,,6,undefined (attribution is constant; molecule is symmetric)
+1,diacetyl,attention,0.3714285714285715,6,passes
+1,diacetyl,integrated_gradients,0.8857142857142858,6,FAILS (map survives weight randomisation)
+1,toluene,attention,0.3571428571428572,7,passes
+1,toluene,integrated_gradients,0.9285714285714288,7,FAILS (map survives weight randomisation)
+1,2-phenylethanol,attention,0.2928895930645031,9,passes
+1,2-phenylethanol,integrated_gradients,0.09999999999999999,9,passes
+2,ethanol,attention,0.5,3,passes
+2,ethanol,integrated_gradients,0.5,3,passes
+2,acetaldehyde,attention,0.5,3,passes
+2,acetaldehyde,integrated_gradients,0.5,3,passes
+2,acetone,attention,0.3333333333333334,4,passes
+2,acetone,integrated_gradients,0.3333333333333334,4,passes
+2,butan-1-ol,attention,0.7999999999999999,5,passes
+2,butan-1-ol,integrated_gradients,0.7999999999999999,5,passes
+2,benzene,attention,,6,undefined (attribution is constant; molecule is symmetric)
+2,benzene,integrated_gradients,,6,undefined (attribution is constant; molecule is symmetric)
+2,diacetyl,attention,0.48571428571428577,6,passes
+2,diacetyl,integrated_gradients,1.0,6,FAILS (map survives weight randomisation)
+2,toluene,attention,0.3090909090909091,7,passes
+2,toluene,integrated_gradients,0.4642857142857144,7,passes
+2,2-phenylethanol,attention,0.4769916229907622,9,passes
+2,2-phenylethanol,integrated_gradients,0.049999999999999996,9,passes
